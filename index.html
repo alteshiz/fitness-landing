@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Имя Фамилия — Фитнес-тренер</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.6);
+        }
+
+        /* СЕКЦИИ */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        /* ОБО МНЕ */
+        .about {
+            background: #f7f7f7;
+            max-width: 100%;
+            padding: 4rem 1.5rem;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #4a4a4a;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* УСЛУГИ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: #f7f7f7;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ГАЛЕРЕЯ */
+        .gallery {
+            background: #f7f7f7;
+            max-width: 100%;
+            padding: 4rem 1.5rem;
+        }
+
+        .gallery-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ПРАЙС */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .price-card {
+            padding: 2rem;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .price-card.featured {
+            border-color: #ff6b35;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        .price-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .price-features li:before {
+            content: "✓ ";
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        /* ОТЗЫВЫ */
+        .reviews {
+            background: #f7f7f7;
+            max-width: 100%;
+            padding: 4rem 1.5rem;
+        }
+
+        .reviews-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #4a4a4a;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* КОНТАКТЫ */
+        .contacts {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .contacts .section-title {
+            color: white;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-btn.whatsapp { background: #25D366; color: white; }
+        .contact-btn.telegram { background: #0088cc; color: white; }
+        .contact-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+
+        /* АДАПТИВ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.7rem; }
+            .price-card.featured { transform: scale(1); }
+            .hero-photo { width: 150px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <!-- ЗАМЕНИТЕ: путь к вашему фото -->
+        <img src="your-photo.jpg" alt="Ваше имя" class="hero-photo">
+        <!-- ЗАМЕНИТЕ: ваше имя -->
+        <h1>Имя Фамилия</h1>
+        <!-- ЗАМЕНИТЕ: ваше УТП (1 предложение) -->
+        <p class="hero-subtitle">Персональный фитнес-тренер. Помогу привести тело в форму без диет и изнурительных тренировок</p>
+        <a href="#contacts" class="cta-btn">Записаться на тренировку</a>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section class="about">
+        <div class="about-content">
+            <h2 class="section-title">Обо мне</h2>
+            <!-- ЗАМЕНИТЕ: краткий текст о себе -->
+            <p class="about-text">
+                Сертифицированный фитнес-тренер с опытом работы более X лет. 
+                Специализируюсь на [ваша специализация]. Работаю с клиентами любого уровня подготовки — 
+                от новичков до продвинутых спортсменов.
+            </p>
+            <div class="stats">
+                <div class="stat">
+                    <!-- ЗАМЕНИТЕ: ваши цифры -->
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">лет опыта</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">клиентов</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">довольны результатом</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section>
+        <h2 class="section-title">Мои услуги</h2>
+        <div class="services-grid">
+            <!-- ЗАМЕНИТЕ: ваши направления -->
+            <div class="service-card">
+                <div class="service-icon">💪</div>
+                <h3>Силовые тренировки</h3>
+                <p>Набор массы, рельеф, укрепление мышц</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Похудение</h3>
+                <p>Снижение веса, коррекция фигуры</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧘</div>
+                <h3>Функциональный тренинг</h3>
+                <p>Выносливость, гибкость, здоровье</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Онлайн-тренировки</h3>
+                <p>Занятия из дома по видеосвязи</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery-grid">
+            <!-- ЗАМЕНИТЕ: 6-9 фото (можно заменить src на пути к вашим фото) -->
+            <div class="gallery-item"><img src="photo1.jpg" alt="Тренировка"></div>
+            <div class="gallery-item"><img src="photo2.jpg" alt="Результат"></div>
+            <div class="gallery-item"><img src="photo3.jpg" alt="Процесс"></div>
+            <div class="gallery-item"><img src="photo4.jpg" alt="Занятие"></div>
+            <div class="gallery-item"><img src="photo5.jpg" alt="Клиент"></div>
+            <div class="gallery-item"><img src="photo6.jpg" alt="Тренировка"></div>
+        </div>
+    </section>
+
+    <!-- ПРАЙС -->
+    <section>
+        <h2 class="section-title">Стоимость</h2>
+        <div class="pricing-grid">
+            <!-- ЗАМЕНИТЕ: ваши пакеты и цены -->
+            <div class="price-card">
+                <h3>Разовая тренировка</h3>
+                <div class="price">2 500 ₽</div>
+                <ul class="price-features">
+                    <li>60 минут</li>
+                    <li>Индивидуально</li>
+                    <li>В зале или онлайн</li>
+                </ul>
+            </div>
+            <div class="price-card featured">
+                <h3>Пакет 10 тренировок</h3>
+                <div class="price">20 000 ₽</div>
+                <ul class="price-features">
+                    <li>Экономия 5 000 ₽</li>
+                    <li>Программа питания</li>
+                    <li>Поддержка в чате</li>
+                    <li>Действует 3 месяца</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>Коучинг 1 месяц</h3>
+                <div class="price">15 000 ₽</div>
+                <ul class="price-features">
+                    <li>Программа тренировок</li>
+                    <li>План питания</li>
+                    <li>Ежедневная поддержка</li>
+                    <li>Корректировка плана</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="reviews">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="reviews-grid">
+            <!-- ЗАМЕНИТЕ: реальные отзывы -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"За 3 месяца сбросила 8 кг и чувствую себя отлично! Тренер подобрал идеальную программу под мой график."</p>
+                <div class="review-author">— Анна, 32 года</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Профессиональный подход, всегда на связи. Рекомендую всем, кто хочет результат без насилия над собой."</p>
+                <div class="review-author">— Дмитрий, 28 лет</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Наконец-то нашла тренера, с которым комфортно заниматься. Вижу прогресс каждую неделю!"</p>
+                <div class="review-author">— Мария, 25 лет</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="contacts" id="contacts">
+        <h2 class="section-title">Свяжитесь со мной</h2>
+        <div class="contact-buttons">
+            <!-- ЗАМЕНИТЕ: ваши контакты -->
+            <a href="https://wa.me/79991234567" class="contact-btn whatsapp">
+                💬 WhatsApp
+            </a>
+            <a href="https://t.me/yourusername" class="contact-btn telegram">
+                ✈️ Telegram
+            </a>
+            <a href="https://instagram.com/yourusername" class="contact-btn instagram">
+                📷 Instagram
+            </a>
+            <a href="tel:+79991234567" class="contact-btn">
+                📞 +7 (999) 123-45-67
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>
