@@ -382,3 +382,445 @@
             padding: 1.5rem;
             background: white;
             border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #4a4a4a;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* FAQ */
+        .faq {
+            background: #fff;
+            padding: 4rem 1.5rem;
+            max-width: 100%;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f7f7f7;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e9e9e9;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #4a4a4a;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* КОНТАКТЫ */
+        .contacts {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: #1a1a1a;
+            color: white;
+            max-width: 100%;
+        }
+
+        .contacts .section-title {
+            color: white;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-btn.whatsapp { background: #25D366; color: white; }
+        .contact-btn.telegram { background: #0088cc; color: white; }
+        .contact-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+
+        /* АДАПТИВ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.7rem; }
+            .price-card.featured { transform: scale(1); }
+            .hero-photo { width: 150px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="Face.jpg" alt="Павел Васильев" class="hero-photo">
+        <h1>Павел Васильев</h1>
+        <p class="hero-subtitle">Персональный фитнес-тренер. Помогу привести тело в форму без диет и изнурительных тренировок</p>
+        <a href="#contacts" class="cta-btn">Записаться на тренировку</a>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section class="about">
+        <div class="about-content">
+            <h2 class="section-title">Обо мне</h2>
+            <p class="about-text">
+                Сертифицированный фитнес-тренер с опытом работы более 5 лет. 
+                Специализируюсь на силовых тренировках и коррекции фигуры. Работаю с клиентами любого уровня подготовки — 
+                от новичков до продвинутых спортсменов.
+            </p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">лет опыта</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">клиентов</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">довольны результатом</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ДЛЯ КОГО -->
+    <section class="target-audience">
+        <h2 class="section-title">Для кого мои услуги</h2>
+        <p class="target-text">
+            Работаю с мужчинами и женщинами от 20 до 50 лет. От полных новичков, 
+            которые никогда не были в зале, до продвинутых спортсменов. 
+            Помогу похудеть, набрать мышечную массу, укрепить здоровье, 
+            исправить осанку или подготовиться к соревнованиям.
+        </p>
+    </section>
+
+    <!-- КАК ПРОХОДЯТ ТРЕНИРОВКИ -->
+    <section class="how-it-works">
+        <h2 class="section-title">Как проходят тренировки</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Обсуждаем цели</h3>
+                <p>Определяем ваши задачи, уровень подготовки, состояние здоровья</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Составляю программу</h3>
+                <p>Индивидуальный план тренировок и питания под ваши цели</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Тренируемся</h3>
+                <p>Контроль техники, мотивация, корректировка нагрузки</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Видим результат</h3>
+                <p>Отслеживаем прогресс, корректируем план, двигаемся дальше</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section>
+        <h2 class="section-title">Мои услуги</h2>
+        <div class="services-grid services-with-prices">
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🏋️</div>
+                    <h3>Персональные тренировки в зале</h3>
+                    <p>Индивидуальные занятия с тренером. Контроль техники, мотивация, максимальный результат</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">📱</div>
+                    <h3>Онлайн-тренировки</h3>
+                    <p>Занятия из дома по видеосвязи. Экономия времени, гибкий график, результат без поездок в зал</p>
+                </div>
+                <div class="service-price">от 2 000 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">💪</div>
+                    <h3>Силовые тренировки</h3>
+                    <p>Набор мышечной массы, рельеф, увеличение силы. Работа с весами и прогрессией нагрузок</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🔥</div>
+                    <h3>Похудение и коррекция фигуры</h3>
+                    <p>Снижение веса, жиросжигание, подтяжка тела. Без голодовок и изнурительных диет</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🧘</div>
+                    <h3>Функциональный тренинг</h3>
+                    <p>Развитие выносливости, гибкости, координации. Укрепление здоровья и повышение энергии</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">📝</div>
+                    <h3>Составление программы</h3>
+                    <p>Индивидуальный план тренировок на 4-8 недель. Для тех, кто хочет тренироваться самостоятельно</p>
+                </div>
+                <div class="service-price">5 000 ₽ <span>/ программа</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🎁</div>
+                    <h3>Пробная тренировка</h3>
+                    <p>Познакомимся, определим цели, проведу первую тренировку. Без обязательств</p>
+                </div>
+                <div class="service-price">БЕСПЛАТНО <span>/ 30 минут</span></div>
+            </div>
+        </div>
+        
+        <!-- ГАРАНТИЯ -->
+        <div class="guarantee">
+            <div class="guarantee-icon">🛡️</div>
+            <h3>Гарантия результата</h3>
+            <p>Если после 5 тренировок вы не увидите никаких изменений — верну деньги за абонемент. Работаю на результат!</p>
+        </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery-grid">
+           <div class="gallery-item"><img src="body.jpg" alt="Мое тело"></div>
+           <div class="gallery-item"><img src="street.jpg" alt="Я"></div>
+        </div>
+    </section>
+
+    <!-- ПРАЙС -->
+    <section>
+        <h2 class="section-title">Стоимость абонементов</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Разовая тренировка</h3>
+                <div class="price">2 500 ₽</div>
+                <ul class="price-features">
+                    <li>60 минут</li>
+                    <li>Индивидуально</li>
+                    <li>В зале или онлайн</li>
+                </ul>
+            </div>
+            <div class="price-card featured">
+                <h3>Пакет 10 тренировок</h3>
+                <div class="price">20 000 ₽</div>
+                <ul class="price-features">
+                    <li>Экономия 5 000 ₽</li>
+                    <li>Программа питания</li>
+                    <li>Поддержка в чате</li>
+                    <li>Действует 3 месяца</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>Коучинг 1 месяц</h3>
+                <div class="price">15 000 ₽</div>
+                <ul class="price-features">
+                    <li>Программа тренировок</li>
+                    <li>План питания</li>
+                    <li>Ежедневная поддержка</li>
+                    <li>Корректировка плана</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="reviews">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"За 3 месяца сбросила 8 кг и чувствую себя отлично! Тренер подобрал идеальную программу под мой график."</p>
+                <div class="review-author">— Анна, 32 года</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Профессиональный подход, всегда на связи. Рекомендую всем, кто хочет результат без насилия над собой."</p>
+                <div class="review-author">— Дмитрий, 28 лет</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Наконец-то нашла тренера, с которым комфортно заниматься. Вижу прогресс каждую неделю!"</p>
+                <div class="review-author">— Мария, 25 лет</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-container">
+            <h2 class="section-title">Частые вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Нужен ли опыт тренировок?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Нет, не нужен! Я работаю с людьми любого уровня подготовки — от тех, кто никогда не был в зале, до продвинутых спортсменов. Программа составляется индивидуально под ваш уровень.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Что брать с собой на первую тренировку?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Удобную спортивную форму, кроссовки, полотенце и бутылку воды. Если есть пульсометр или фитнес-браслет — отлично, но не обязательно. Главное — желание работать!
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Можно ли заниматься при травмах или проблемах со здоровьем?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Да, но обязательно предупредите меня о всех травмах и заболеваниях до начала тренировок. Я разработаю безопасную программу с учётом ваших ограничений.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Как часто нужно тренироваться?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Оптимально 2-3 раза в неделю для новичков и 3-5 раз для продвинутых. Но всё индивидуально — подберём график, который впишется в вашу жизнь.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Нужно ли соблюдать диету?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Жёсткие диеты не нужны и даже вредны. Я помогу наладить правильное питание без голодовок и запретов. Будем работать с рационом, порциями и режимом питания.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Когда будет виден первый результат?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Уже через 2-3 недели вы почувствуете прилив энергии и улучшение сна. Первые видимые изменения в теле обычно через 4-6 недель регулярных тренировок.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="contacts" id="contacts">
+        <h2 class="section-title">Свяжитесь со мной</h2>
+        <div class="contact-buttons">
+            <a href="https://wa.me/79670667766" class="contact-btn whatsapp">
+                💬 WhatsApp
+            </a>
+            <a href="https://t.me/yourusername" class="contact-btn telegram">
+                ✈️ Telegram (замените yourusername)
+            </a>
+            <a href="https://instagram.com/yourusername" class="contact-btn instagram">
+                📷 Instagram (замените yourusername)
+            </a>
+            <a href="tel:+79670667766" class="contact-btn">
+                📞 +7 (967) 066-77-66
+            </a>
+        </div>
+    </section>
+
+<script>
+function toggleFaq(element) {
+    const item = element.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Закрываем все
+    document.querySelectorAll('.faq-item').forEach(faq => {
+        faq.classList.remove('active');
+    });
+    
+    // Открываем текущий, если он был закрыт
+    if (!isActive) {
+        item.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>
