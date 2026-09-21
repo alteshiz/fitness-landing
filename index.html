@@ -804,6 +804,21 @@
             </a>
         </div>
     </section>
-
+<script>
+function toggleFaq(element) {
+    const item = element.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Закрываем все
+    document.querySelectorAll('.faq-item').forEach(faq => {
+        faq.classList.remove('active');
+    });
+    
+    // Открываем текущий, если он был закрыт
+    if (!isActive) {
+        item.classList.add('active');
+    }
+}
+</script>
 </body>
 </html>
