@@ -29,4 +29,909 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(rgba(0, 0
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('orig.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-top: 5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.6);
+        }
+
+        /* СЕКЦИИ */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        /* ОБО МНЕ */
+        .about {
+            background: #f7f7f7;
+            max-width: 100%;
+            padding: 4rem 1.5rem;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #4a4a4a;
+        }
+
+        /* ОБРАЗОВАНИЕ */
+        .education {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 1.5rem;
+            max-width: 100%;
+            color: white;
+        }
+
+        .education-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .education-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .education-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .education-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .education-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .education-info {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .education-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .education-info p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .education-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            background: #ff6b35;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .education-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .edu-photo {
+            aspect-ratio: 4/3;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .edu-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .edu-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edu-photo.main {
+            grid-column: 1 / -1;
+            aspect-ratio: 16/9;
+        }
+
+        .edu-photo-label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Модальное окно для просмотра фото */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            cursor: pointer;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.2);
+        }
+
+        /* ДЛЯ КОГО */
+        .target-audience {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .target-audience h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .target-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* КАК ПРОХОДЯТ ТРЕНИРОВКИ */
+        .how-it-works {
+            padding: 4rem 1.5rem;
+            background: #fff;
+            max-width: 100%;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: #f7f7f7;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #ff6b35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step-card h3 {
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .step-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* УСЛУГИ С ЦЕНАМИ */
+        .services-with-prices .service-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .service-price span {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: #f7f7f7;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ГАЛЕРЕЯ */
+        .gallery {
+            background: #f7f7f7;
+            max-width: 100%;
+            padding: 4rem 1.5rem;
+        }
+
+        .gallery-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 9/16;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ПРАЙС */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .price-card {
+            padding: 2rem;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .price-card.featured {
+            border-color: #ff6b35;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        .price-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .price-features li:before {
+            content: "✓ ";
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq {
+            background: #fff;
+            padding: 4rem 1.5rem;
+            max-width: 100%;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f7f7f7;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e9e9e9;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #4a4a4a;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* КОНТАКТЫ */
+        .contacts {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: #1a1a1a;
+            color: white;
+            max-width: 100%;
+        }
+
+        .contacts .section-title {
+            color: white;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-btn.whatsapp { background: #25D366; color: white; }
+        .contact-btn.telegram { background: #0088cc; color: white; }
+        .contact-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+
+        /* АДАПТИВ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.7rem; }
+            .price-card.featured { transform: scale(1); }
+            .hero-photo { width: 150px; height: 150px; }
+            
+            .education-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .education-gallery {
+                order: -1;
+            }
+            .education-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="Face.jpg" alt="Павел Васильев" class="hero-photo">
+        <h1>Павел Васильев</h1>
+        <p class="hero-subtitle">Персональный фитнес-тренер. Помогу привести тело в форму без диет и изнурительных тренировок</p>
+        <a href="#contacts" class="cta-btn">Записаться на тренировку</a>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section class="about">
+        <div class="about-content">
+            <h2 class="section-title">Обо мне</h2>
+            <p class="about-text">
+                Сертифицированный фитнес-тренер. 
+                Специализируюсь на силовых тренировках и коррекции фигуры. Работаю с клиентами любого уровня подготовки — 
+                от новичков до продвинутых спортсменов.
+            </p>
+        </div>
+    </section>
+
+    <!-- ОБРАЗОВАНИЕ -->
+    <section class="education">
+        <div class="education-container">
+            <div class="education-header">
+                <h2>Образование и квалификация</h2>
+                <p>Профессиональная подготовка в ведущей фитнес-академии России</p>
+            </div>
+            
+            <div class="education-content">
+                <div class="education-info">
+                    <h3>DDX Academy</h3>
+                    <p>
+                        Прошел полноценное обучение в <strong>DDX Academy</strong> — одной из ведущих фитнес-академий России. 
+                        Курс длился <strong>6 месяцев</strong> и включал глубокое изучение теории, интенсивную практику и работу с реальными клиентами под руководством опытных наставников.
+                    </p>
+                    <p>
+                        По окончании получил <strong>диплом государственного образца</strong>, который внесен в официальный реестр. 
+                        Это подтверждает мою квалификацию и дает вам гарантию профессионального, безопасного и эффективного подхода к тренировкам.
+                    </p>
+                    <div class="education-badges">
+                        <span class="badge">✓ Диплом гос. образца</span>
+                        <span class="badge">✓ Внесен в реестр</span>
+                        <span class="badge">✓ 6 месяцев обучения</span>
+                    </div>
+                </div>
+                
+                <div class="education-gallery">
+                    <div class="edu-photo main" onclick="openModal('academy.jpeg')">
+                        <img src="academy.jpeg" alt="Я в DDX Academy">
+                        <span class="edu-photo-label">Обучение в DDX Academy</span>
+                    </div>
+                    <div class="edu-photo" onclick="openModal('diplom1.jpeg')">
+                        <img src="diplom1.jpeg" alt="Диплом страница 1">
+                        <span class="edu-photo-label">Диплом</span>
+                    </div>
+                    <div class="edu-photo" onclick="openModal('diplom2.jpeg')">
+                        <img src="diplom2.jpeg" alt="Диплом страница 2">
+                        <span class="edu-photo-label">Диплом</span>
+                    </div>
+                    <div class="edu-photo" onclick="openModal('diplom3.jpeg')">
+                        <img src="diplom3.jpeg" alt="Диплом страница 3">
+                        <span class="edu-photo-label">Диплом</span>
+                    </div>
+                    <div class="edu-photo" onclick="openModal('together.jpeg')">
+                        <img src="together.jpeg" alt="С одногруппниками">
+                        <span class="edu-photo-label">С одногруппниками</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для просмотра фото -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- ДЛЯ КОГО -->
+    <section class="target-audience">
+        <h2 class="section-title">Для кого мои услуги</h2>
+        <p class="target-text">
+            Работаю с мужчинами и женщинами от 20 до 50 лет. От полных новичков, 
+            которые никогда не были в зале, до продвинутых спортсменов. 
+            Помогу похудеть, набрать мышечную массу, укрепить здоровье, 
+            исправить осанку или подготовиться к соревнованиям.
+        </p>
+    </section>
+
+    <!-- КАК ПРОХОДЯТ ТРЕНИРОВКИ -->
+    <section class="how-it-works">
+        <h2 class="section-title">Как проходят тренировки</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Обсуждаем цели</h3>
+                <p>Определяем ваши задачи, уровень подготовки, состояние здоровья</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Составляю программу</h3>
+                <p>Индивидуальный план тренировок и питания под ваши цели</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Тренируемся</h3>
+                <p>Контроль техники, мотивация, корректировка нагрузки</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Видим результат</h3>
+                <p>Отслеживаем прогресс, корректируем план, двигаемся дальше</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section>
+        <h2 class="section-title">Мои услуги</h2>
+        <div class="services-grid services-with-prices">
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🏋️</div>
+                    <h3>Персональные тренировки в зале</h3>
+                    <p>Индивидуальные занятия с тренером. Контроль техники, мотивация, максимальный результат</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">📱</div>
+                    <h3>Онлайн-тренировки</h3>
+                    <p>Занятия из дома по видеосвязи. Экономия времени, гибкий график, результат без поездок в зал</p>
+                </div>
+                <div class="service-price">от 2 000 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">💪</div>
+                    <h3>Силовые тренировки</h3>
+                    <p>Набор мышечной массы, рельеф, увеличение силы. Работа с весами и прогрессией нагрузок</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🔥</div>
+                    <h3>Похудение и коррекция фигуры</h3>
+                    <p>Снижение веса, жиросжигание, подтяжка тела. Без голодовок и изнурительных диет</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🧘</div>
+                    <h3>Функциональный тренинг</h3>
+                    <p>Работа с собственным весом тела. Развитие выносливости, гибкости, координации. Укрепление здоровья и повышение энергии</p>
+                </div>
+                <div class="service-price">от 2 500 ₽ <span>/ занятие</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">📝</div>
+                    <h3>Составление программы</h3>
+                    <p>Индивидуальный план тренировок на 4 недели (8 тренировок). Для тех, кто хочет тренироваться самостоятельно</p>
+                </div>
+                <div class="service-price">5 000 ₽ <span>/ программа</span></div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <div class="service-icon">🎁</div>
+                    <h3>Пробная тренировка</h3>
+                    <p>Познакомимся, определим цели, проведу первую тренировку. В зависимости от местоположения спортзала, либо вариант тренировки на улице в благоприятные погодные условия. Всё оговаривается.</p>
+                </div>
+                <div class="service-price">БЕСПЛАТНО <span>/ 30 минут</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery-grid">
+           <div class="gallery-item"><img src="body.jpg" alt="Мое тело"></div>
+           <div class="gallery-item"><img src="street.jpg" alt="Я"></div>
+        </div>
+    </section>
+
+    <!-- ПРАЙС -->
+    <section>
+        <h2 class="section-title">Стоимость абонементов</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Разовая тренировка</h3>
+                <div class="price">2 500 ₽</div>
+                <ul class="price-features">
+                    <li>60 минут</li>
+                    <li>Индивидуально</li>
+                    <li>В зале</li>
+                </ul>
+            </div>
+            <div class="price-card featured">
+                <h3>Пакет 10 тренировок</h3>
+                <div class="price">20 000 ₽</div>
+                <ul class="price-features">
+                    <li>Экономия 5 000 ₽</li>
+                    <li>Программа питания</li>
+                    <li>Поддержка в чате</li>
+                    <li>Действует 3 месяца</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h3>Коучинг 1 месяц</h3>
+                <div class="price">15 000 ₽</div>
+                <ul class="price-features">
+                    <li>Программа тренировок</li>
+                    <li>План питания</li>
+                    <li>Ежедневная поддержка</li>
+                    <li>Корректировка плана</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-container">
+            <h2 class="section-title">Частые вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Нужен ли опыт тренировок?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Нет, не нужен! Я работаю с людьми любого уровня подготовки — от тех, кто никогда не был в зале, до продвинутых спортсменов. Программа составляется индивидуально под ваш уровень.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Что брать с собой на первую тренировку?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Удобную спортивную форму, кроссовки, полотенце и бутылку воды. Если есть пульсометр или фитнес-браслет — отлично, но не обязательно. Главное — желание работать!
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Можно ли заниматься при травмах или проблемах со здоровьем?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Да, но обязательно предупредите меня о всех травмах и заболеваниях до начала тренировок. Я разработаю безопасную программу с учётом ваших ограничений.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Как часто нужно тренироваться?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Оптимально 2-3 раза в неделю для новичков и 3-5 раз для продвинутых. Но всё индивидуально — подберём график, который впишется в вашу жизнь.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Нужно ли соблюдать диету?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Жёсткие диеты не нужны и даже вредны. Я помогу наладить правильное питание без голодовок и запретов. Будем работать с рационом, порциями и режимом питания.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Когда будет виден первый результат?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Уже через 2-3 недели вы почувствуете прилив энергии и улучшение сна. Первые видимые изменения в теле обычно через 4-6 недель регулярных тренировок.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="contacts" id="contacts">
+        <h2 class="section-title">Свяжитесь со мной</h2>
+        <div class="contact-buttons">
+            <a href="https://wa.me/79670667766" class="contact-btn whatsapp">
+                💬 WhatsApp
+            </a>
+            <a href="https://t.me/Otuhadouha" class="contact-btn telegram">
+                ✈️ Telegram
+            </a>
+            <a href="https://www.instagram.com/moitrener/" class="contact-btn instagram">
+                📷 Instagram
+            </a>
+            <a href="tel:+79670667766" class="contact-btn">
+                📞 +7 (967) 066-77-66
+            </a>
+        </div>
+    </section>
+
+<script>
+// Функция для FAQ
+function toggleFaq(element) {
+    const item = element.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    document.querySelectorAll('.faq-item').forEach(faq => {
+        faq.classList.remove('active');
+    });
+    
+    if (!isActive) {
+        item.classList.add('active');
+    }
+}
+
+// Функции для модального окна (просмотр фото)
+function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    modal.classList.add('active');
+    modalImg.src = imageSrc;
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('active');
+}
+</script>
+
+</body>
+</html>
