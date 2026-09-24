@@ -236,7 +236,7 @@
             font-weight: 600;
         }
 
-        /* Модальное окно для просмотра фото */
+        /* Модальное окно */
         .modal {
             display: none;
             position: fixed;
@@ -345,7 +345,7 @@
             font-size: 0.95rem;
         }
 
-        /* УСЛУГИ С ЦЕНАМИ */
+        /* УСЛУГИ */
         .services-with-prices .service-card {
             display: flex;
             flex-direction: column;
@@ -535,6 +535,257 @@
             transform: rotate(45deg);
         }
 
+        /* КАЛЬКУЛЯТОРЫ */
+        .calculators {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 4rem 1.5rem;
+            max-width: 100%;
+        }
+
+        .calculators-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .calc-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .calc-tab {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            background: transparent;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .calc-tab.active {
+            background: #ff6b35;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .calc-panel {
+            display: none;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .calc-panel.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .calc-info {
+            background: #f0f7ff;
+            border-left: 4px solid #4a90e2;
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .calc-info strong {
+            color: #1a1a1a;
+        }
+
+        .calc-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .calc-input-group {
+            text-align: left;
+        }
+
+        .calc-input-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a4a4a;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            text-align: center;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .calc-input:focus {
+            border-color: #ff6b35;
+        }
+
+        .gender-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .gender-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .gender-btn.active {
+            border-color: #ff6b35;
+            background: #ff6b35;
+            color: white;
+        }
+
+        .activity-selector {
+            margin-bottom: 1.5rem;
+        }
+
+        .activity-selector label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a4a4a;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .activity-select:focus {
+            border-color: #ff6b35;
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #ff6b35;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.6);
+        }
+
+        .calc-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #fff3cd;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b35;
+            display: none;
+        }
+
+        .calc-result.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result-main {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-category {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .result-details {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .result-detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+
+        .result-detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-detail-row span:first-child {
+            color: #666;
+        }
+
+        .result-detail-row span:last-child {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .result-cta {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        .result-cta:hover {
+            background: #ff6b35;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* КОНТАКТЫ */
         .contacts {
             text-align: center;
@@ -595,6 +846,17 @@
             .education-header h2 {
                 font-size: 2rem;
             }
+            
+            .calc-inputs {
+                grid-template-columns: 1fr;
+            }
+            .calc-panel {
+                padding: 1.5rem;
+            }
+            .calc-tab {
+                font-size: 0.9rem;
+                padding: 0.8rem 0.5rem;
+            }
         }
     </style>
 </head>
@@ -651,7 +913,6 @@
                         <img src="academy.jpeg" alt="Я в DDX Academy">
                         <span class="edu-photo-label">Обучение в DDX Academy</span>
                     </div>
-                   
                     <div class="edu-photo" onclick="openModal('diplom3.jpeg')">
                         <img src="diplom3.jpeg" alt="Диплом страница 3">
                         <span class="edu-photo-label">Диплом</span>
@@ -665,7 +926,7 @@
         </div>
     </section>
 
-    <!-- Модальное окно для просмотра фото -->
+    <!-- Модальное окно -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="modal-close">&times;</span>
         <img class="modal-content" id="modalImage">
@@ -747,7 +1008,7 @@
             </div>
             <div class="service-card">
                 <div>
-                    <div class="service-icon"></div>
+                    <div class="service-icon">🧘</div>
                     <h3>Функциональный тренинг</h3>
                     <p>Работа с собственным весом тела. Развитие выносливости, гибкости, координации. Укрепление здоровья и повышение энергии</p>
                 </div>
@@ -884,6 +1145,118 @@
         </div>
     </section>
 
+    <!-- КАЛЬКУЛЯТОРЫ -->
+    <section class="calculators">
+        <div class="calculators-container">
+            <h2 class="section-title">Калькуляторы здоровья</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Узнайте важные показатели своего тела и получите персональную рекомендацию
+            </p>
+            
+            <!-- Вкладки -->
+            <div class="calc-tabs">
+                <button class="calc-tab active" onclick="switchTab('bmi')">📊 Индекс массы тела</button>
+                <button class="calc-tab" onclick="switchTab('bmr')"> Норма калорий (BMR)</button>
+            </div>
+            
+            <!-- Панель ИМТ -->
+            <div id="bmi-panel" class="calc-panel active">
+                <div class="calc-info">
+                    <strong>Что такое ИМТ?</strong> Индекс массы тела — это показатель, который помогает оценить, насколько ваш вес соответствует росту. Это отправная точка для составления программы тренировок и питания.
+                </div>
+                
+                <div class="calc-inputs">
+                    <div class="calc-input-group">
+                        <label for="bmi-height">Ваш рост (см)</label>
+                        <input type="number" id="bmi-height" class="calc-input" placeholder="175">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="bmi-weight">Ваш вес (кг)</label>
+                        <input type="number" id="bmi-weight" class="calc-input" placeholder="70">
+                    </div>
+                </div>
+                
+                <button class="calc-btn" onclick="calculateBMI()">Рассчитать ИМТ</button>
+                
+                <div id="bmi-result" class="calc-result">
+                    <div class="result-main" id="bmi-value">0.0</div>
+                    <div class="result-category" id="bmi-category">Категория</div>
+                    <div id="bmi-recommendation"></div>
+                    <a href="#contacts" class="result-cta">Записаться на консультацию</a>
+                </div>
+            </div>
+            
+            <!-- Панель BMR -->
+            <div id="bmr-panel" class="calc-panel">
+                <div class="calc-info">
+                    <strong>Что такое BMR?</strong> Базальный метаболизм (BMR) — это количество калорий, которое ваш организм тратит в состоянии полного покоя просто на поддержание жизни: дыхание, работу сердца, мозга и всех органов. 
+                    <br><br>
+                    <strong>Зачем это знать?</strong> Зная свой BMR, вы понимаете, сколько калорий нужно есть, чтобы худеть, набирать массу или поддерживать вес. Без этих цифр любая диета — это гадание.
+                </div>
+                
+                <div class="gender-selector">
+                    <button class="gender-btn active" onclick="setGender('male', this)"> Мужской</button>
+                    <button class="gender-btn" onclick="setGender('female', this)">👩 Женский</button>
+                </div>
+                
+                <div class="calc-inputs">
+                    <div class="calc-input-group">
+                        <label for="bmr-age">Возраст (лет)</label>
+                        <input type="number" id="bmr-age" class="calc-input" placeholder="30">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="bmr-height">Рост (см)</label>
+                        <input type="number" id="bmr-height" class="calc-input" placeholder="175">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="bmr-weight">Вес (кг)</label>
+                        <input type="number" id="bmr-weight" class="calc-input" placeholder="70">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="bmr-activity">Уровень активности</label>
+                        <select id="bmr-activity" class="activity-select">
+                            <option value="1.2">Минимальная (сидячий образ жизни)</option>
+                            <option value="1.375">Низкая (1-3 тренировки в неделю)</option>
+                            <option value="1.55" selected>Средняя (3-5 тренировок в неделю)</option>
+                            <option value="1.725">Высокая (6-7 тренировок в неделю)</option>
+                            <option value="1.9">Очень высокая (тяжёлый физ. труд)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="calc-btn" onclick="calculateBMR()">Рассчитать норму калорий</button>
+                
+                <div id="bmr-result" class="calc-result">
+                    <div class="result-main" id="bmr-value">0 ккал</div>
+                    <div class="result-category" id="bmr-category">Ваш базальный метаболизм</div>
+                    
+                    <div class="result-details">
+                        <div class="result-detail-row">
+                            <span> Покой (BMR):</span>
+                            <span id="bmr-rest">0 ккал</span>
+                        </div>
+                        <div class="result-detail-row">
+                            <span>⚖️ Поддержание веса:</span>
+                            <span id="bmr-maintain">0 ккал</span>
+                        </div>
+                        <div class="result-detail-row">
+                            <span>📉 Похудение (−20%):</span>
+                            <span id="bmr-lose">0 ккал</span>
+                        </div>
+                        <div class="result-detail-row">
+                            <span>📈 Набор массы (+15%):</span>
+                            <span id="bmr-gain">0 ккал</span>
+                        </div>
+                    </div>
+                    
+                    <div id="bmr-recommendation" style="margin-top: 1rem; font-size: 0.95rem; color: #4a4a4a; line-height: 1.6;"></div>
+                    
+                    <a href="#contacts" class="result-cta">Получить план питания</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- КОНТАКТЫ -->
     <section class="contacts" id="contacts">
         <h2 class="section-title">Свяжитесь со мной</h2>
@@ -892,7 +1265,7 @@
                 💬 WhatsApp
             </a>
             <a href="https://t.me/Otuhadouha" class="contact-btn telegram">
-                ️ Telegram
+                ✈️ Telegram
             </a>
             <a href="https://www.instagram.com/moitrener/" class="contact-btn instagram">
                 📷 Instagram
@@ -904,21 +1277,19 @@
     </section>
 
 <script>
-// Функция для FAQ
+// FAQ
 function toggleFaq(element) {
     const item = element.parentElement;
     const isActive = item.classList.contains('active');
-    
     document.querySelectorAll('.faq-item').forEach(faq => {
         faq.classList.remove('active');
     });
-    
     if (!isActive) {
         item.classList.add('active');
     }
 }
 
-// Функции для модального окна (просмотр фото)
+// Модальное окно
 function openModal(imageSrc) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
@@ -929,6 +1300,107 @@ function openModal(imageSrc) {
 function closeModal() {
     const modal = document.getElementById('imageModal');
     modal.classList.remove('active');
+}
+
+// Переключение вкладок калькуляторов
+function switchTab(tab) {
+    document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+    
+    event.target.classList.add('active');
+    document.getElementById(tab + '-panel').classList.add('active');
+}
+
+// Выбор пола
+let selectedGender = 'male';
+function setGender(gender, btn) {
+    selectedGender = gender;
+    document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+
+// Калькулятор ИМТ
+function calculateBMI() {
+    const height = parseFloat(document.getElementById('bmi-height').value);
+    const weight = parseFloat(document.getElementById('bmi-weight').value);
+    const resultDiv = document.getElementById('bmi-result');
+    
+    if (!height || !weight || height <= 0 || weight <= 0) {
+        alert('Пожалуйста, введите корректные значения роста и веса!');
+        return;
+    }
+    
+    const heightInMeters = height / 100;
+    const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+    
+    let category = '';
+    let recommendation = '';
+    
+    if (bmi < 18.5) {
+        category = 'Недостаточный вес';
+        recommendation = '<p style="margin-bottom: 0.5rem;">Вам отлично подойдет моя программа <strong>"Набор мышечной массы"</strong>. Мы составим план силовых тренировок и рассчитаем профицит калорий для здорового набора веса.</p>';
+    } else if (bmi < 25) {
+        category = 'Нормальный вес';
+        recommendation = '<p style="margin-bottom: 0.5rem;">Отличный результат! Чтобы поддерживать форму, стать рельефнее и сильнее, рекомендую программу <strong>"Функциональный тренинг"</strong> или <strong>"Силовые тренировки"</strong>.</p>';
+    } else if (bmi < 30) {
+        category = 'Избыточный вес';
+        recommendation = '<p style="margin-bottom: 0.5rem;">Не переживайте, это поправимо! Моя программа <strong>"Похудение и коррекция фигуры"</strong> поможет вам безопасно снизить вес без жестких диет, только за счет грамотных тренировок и питания.</p>';
+    } else {
+        category = 'Ожирение';
+        recommendation = '<p style="margin-bottom: 0.5rem;">Я помогу вам начать путь к здоровью максимально безопасно. Мы начнем с щадящих нагрузок, наладим питание и будем постепенно двигаться к вашей идеальной форме. Запишитесь на <strong>бесплатную пробную тренировку</strong>!</p>';
+    }
+    
+    document.getElementById('bmi-value').textContent = bmi;
+    document.getElementById('bmi-category').textContent = category;
+    document.getElementById('bmi-recommendation').innerHTML = recommendation;
+    
+    resultDiv.classList.add('show');
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Калькулятор BMR (Миффлин-Сан Жеор)
+function calculateBMR() {
+    const age = parseFloat(document.getElementById('bmr-age').value);
+    const height = parseFloat(document.getElementById('bmr-height').value);
+    const weight = parseFloat(document.getElementById('bmr-weight').value);
+    const activity = parseFloat(document.getElementById('bmr-activity').value);
+    const resultDiv = document.getElementById('bmr-result');
+    
+    if (!age || !height || !weight || age <= 0 || height <= 0 || weight <= 0) {
+        alert('Пожалуйста, заполните все поля корректно!');
+        return;
+    }
+    
+    // Формула Миффлина-Сан Жеора
+    let bmr;
+    if (selectedGender === 'male') {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    } else {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+    }
+    
+    const dailyCalories = Math.round(bmr * activity);
+    const loseWeight = Math.round(dailyCalories * 0.8);
+    const gainWeight = Math.round(dailyCalories * 1.15);
+    
+    document.getElementById('bmr-value').textContent = Math.round(bmr) + ' ккал';
+    document.getElementById('bmr-rest').textContent = Math.round(bmr) + ' ккал';
+    document.getElementById('bmr-maintain').textContent = dailyCalories + ' ккал';
+    document.getElementById('bmr-lose').textContent = loseWeight + ' ккал';
+    document.getElementById('bmr-gain').textContent = gainWeight + ' ккал';
+    
+    let recommendation = '';
+    if (selectedGender === 'male') {
+        recommendation = '<p style="margin-bottom: 0.5rem;">👨 <strong>Для мужчин:</strong> чтобы худеть безопасно, не опускайтесь ниже 1500 ккал в день. Для набора массы добавляйте 300-500 ккал к норме и делайте упор на силовые тренировки.</p>';
+    } else {
+        recommendation = '<p style="margin-bottom: 0.5rem;">👩 <strong>Для женщин:</strong> безопасный минимум — 1200 ккал в день. Ниже опускаться нельзя — это замедлит метаболизм и навредит здоровью.</p>';
+    }
+    recommendation += '<p>Хотите точный план питания под ваши цели и вкусы? Запишитесь на консультацию — рассчитаю КБЖУ и составлю меню!</p>';
+    
+    document.getElementById('bmr-recommendation').innerHTML = recommendation;
+    
+    resultDiv.classList.add('show');
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // Защита от копирования
