@@ -22,6 +22,56 @@
             user-select: none;
         }
 
+        /* TOP BANNER */
+        .top-banner {
+            background: linear-gradient(90deg, #ff6b35 0%, #ff8c5a 100%);
+            color: white;
+            text-align: center;
+            padding: 0.9rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+            position: relative;
+            z-index: 100;
+        }
+
+        .top-banner:hover {
+            background: linear-gradient(90deg, #ff5722 0%, #ff7a45 100%);
+            padding: 1rem 1.5rem;
+        }
+
+        .top-banner-text {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .top-banner-icon {
+            font-size: 1.3rem;
+            animation: pulse 2s infinite;
+        }
+
+        .top-banner-arrow {
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .top-banner:hover .top-banner-arrow {
+            transform: translateX(5px);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
         /* HERO */
         .hero {
             width: 100%;
@@ -857,10 +907,26 @@
                 font-size: 0.9rem;
                 padding: 0.8rem 0.5rem;
             }
+            .top-banner {
+                font-size: 0.9rem;
+                padding: 0.8rem 1rem;
+            }
+            .top-banner:hover {
+                padding: 0.8rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- TOP BANNER -->
+    <div class="top-banner" onclick="scrollToCalculators()">
+        <div class="top-banner-text">
+            <span class="top-banner-icon">⚡</span>
+            <span>Посчитай свою норму калорий за 15 секунд!</span>
+            <span class="top-banner-arrow">→</span>
+        </div>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
@@ -1146,7 +1212,7 @@
     </section>
 
     <!-- КАЛЬКУЛЯТОРЫ -->
-    <section class="calculators">
+    <section class="calculators" id="calculators">
         <div class="calculators-container">
             <h2 class="section-title">Калькуляторы здоровья</h2>
             <p style="text-align: center; color: #666; margin-bottom: 2rem;">
@@ -1156,7 +1222,7 @@
             <!-- Вкладки -->
             <div class="calc-tabs">
                 <button class="calc-tab active" onclick="switchTab('bmi')">📊 Индекс массы тела</button>
-                <button class="calc-tab" onclick="switchTab('bmr')"> Норма калорий (BMR)</button>
+                <button class="calc-tab" onclick="switchTab('bmr')">🔥 Норма калорий (BMR)</button>
             </div>
             
             <!-- Панель ИМТ -->
@@ -1195,7 +1261,7 @@
                 </div>
                 
                 <div class="gender-selector">
-                    <button class="gender-btn active" onclick="setGender('male', this)"> Мужской</button>
+                    <button class="gender-btn active" onclick="setGender('male', this)">👨 Мужской</button>
                     <button class="gender-btn" onclick="setGender('female', this)">👩 Женский</button>
                 </div>
                 
@@ -1232,7 +1298,7 @@
                     
                     <div class="result-details">
                         <div class="result-detail-row">
-                            <span> Покой (BMR):</span>
+                            <span>😴 Покой (BMR):</span>
                             <span id="bmr-rest">0 ккал</span>
                         </div>
                         <div class="result-detail-row">
@@ -1268,10 +1334,10 @@
                 ✈️ Telegram
             </a>
             <a href="https://www.instagram.com/moitrener/" class="contact-btn instagram">
-                📷 Instagram
+                 Instagram
             </a>
             <a href="tel:+79670667766" class="contact-btn">
-                📞 +7 (967) 066-77-66
+                 +7 (967) 066-77-66
             </a>
         </div>
     </section>
@@ -1401,6 +1467,14 @@ function calculateBMR() {
     
     resultDiv.classList.add('show');
     resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Плавный скролл к калькуляторам
+function scrollToCalculators() {
+    const calcSection = document.getElementById('calculators');
+    if (calcSection) {
+        calcSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 // Защита от копирования
